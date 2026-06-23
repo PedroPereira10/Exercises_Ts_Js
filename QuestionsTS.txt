@@ -1,0 +1,10 @@
+1 - Count Positive Numbers
+2 - Find First Even Number
+3 - Find Last Negative Number
+4 - Count Occurrences
+5 - Find Longest Word
+6 - Capitalize First Letter
+7 - Count Words
+8 - Find Second Largest
+9 - Move Zeros
+10 - Valid Parentheses
