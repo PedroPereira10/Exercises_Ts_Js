@@ -227,3 +227,31 @@
 // }
 
 // console.log(moveZeros([1, 0, 9, 8, 7, 0, 4, 5, 6]));
+
+function validParentheses(s: string): boolean {
+  const stack: string[] = [];
+
+  for (const char of s) {
+    if (char === "(" || char === "[" || char === "{") {
+      stack.push(char);
+    } else {
+      if (stack.length === 0) {
+        return false;
+      }
+
+      const last = stack.pop();
+
+      if (
+        (char === ")" && last !== "(") ||
+        (char === "]" && last !== "[") ||
+        (char === "}" && last !== "{")
+      ) {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0;
+}
+
+console.log(validParentheses("()"));
