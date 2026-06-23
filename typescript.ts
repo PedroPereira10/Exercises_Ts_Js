@@ -207,3 +207,23 @@
 // }
 
 // console.log(secLargest([1, 4, 7, 10, 15]));
+
+// function moveZeros(nums: number[]): number[] {
+//   const result: number[] = [];
+//   let zeroCount = 0;
+
+//   for (const num of nums) {
+//     if (num === 0) {
+//       zeroCount++;
+//     } else {
+//       result.push(num);
+//     }
+//   }
+//   for (let i = 0; i < zeroCount; i++) {
+//     result.push(0);
+//   }
+
+//   return result;
+// }
+
+// console.log(moveZeros([1, 0, 9, 8, 7, 0, 4, 5, 6]));
