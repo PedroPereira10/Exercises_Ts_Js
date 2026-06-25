@@ -228,30 +228,54 @@
 
 // console.log(moveZeros([1, 0, 9, 8, 7, 0, 4, 5, 6]));
 
-function validParentheses(s: string): boolean {
-  const stack: string[] = [];
+// function validParentheses(s: string): boolean {
+//   const stack: string[] = [];
 
-  for (const char of s) {
-    if (char === "(" || char === "[" || char === "{") {
-      stack.push(char);
-    } else {
-      if (stack.length === 0) {
-        return false;
-      }
+//   for (const char of s) {
+//     if (char === "(" || char === "[" || char === "{") {
+//       stack.push(char);
+//     } else {
+//       if (stack.length === 0) {
+//         return false;
+//       }
 
-      const last = stack.pop();
+//       const last = stack.pop();
 
-      if (
-        (char === ")" && last !== "(") ||
-        (char === "]" && last !== "[") ||
-        (char === "}" && last !== "{")
-      ) {
-        return false;
-      }
+//       if (
+//         (char === ")" && last !== "(") ||
+//         (char === "]" && last !== "[") ||
+//         (char === "}" && last !== "{")
+//       ) {
+//         return false;
+//       }
+//     }
+//   }
+
+//   return stack.length === 0;
+// }
+
+// console.log(validParentheses("()"));
+
+// function reverseString(strs: string): string {
+//   let reversed = "";
+
+//   for (let str = strs.length - 1; str >= 0; str--) {
+//     reversed += strs[str];
+//   }
+
+//   return reversed;
+// }
+
+// console.log(reverseString("Pedro"));
+
+function findIndex(nums: number[], target: number): number {
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === target) {
+      return i;
     }
   }
 
-  return stack.length === 0;
+  return -1;
 }
 
-console.log(validParentheses("()"));
+console.log(findIndex([1, 2, 5, 6, 8, 9, 4], 8));
