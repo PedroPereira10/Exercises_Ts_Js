@@ -10,3 +10,4 @@
 10 - Valid Parentheses
 11 - Reverse String
 12 - Find index Target
+13 - Couting Vowels

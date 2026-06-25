@@ -268,14 +268,29 @@
 
 // console.log(reverseString("Pedro"));
 
-function findIndex(nums: number[], target: number): number {
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === target) {
-      return i;
+// function findIndex(nums: number[], target: number): number {
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] === target) {
+//       return i;
+//     }
+//   }
+
+//   return -1;
+// }
+
+// console.log(findIndex([1, 2, 5, 6, 8, 9, 4], 8));
+
+function coutingVowels(strs: string): number {
+  let counter = 0;
+  let vowels = "aieou";
+
+  for (let i = 0; i < strs.length; i++) {
+    if (vowels.includes(strs[i].toLowerCase())) {
+      counter++;
     }
   }
 
-  return -1;
+  return counter;
 }
 
-console.log(findIndex([1, 2, 5, 6, 8, 9, 4], 8));
+console.log(coutingVowels("Pedro"));
