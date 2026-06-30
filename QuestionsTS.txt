@@ -11,3 +11,5 @@
 11 - Reverse String
 12 - Find index Target
 13 - Couting Vowels
+14 - Largest Odd Number
+15 - Counting Upper Case

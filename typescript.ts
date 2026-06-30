@@ -280,17 +280,43 @@
 
 // console.log(findIndex([1, 2, 5, 6, 8, 9, 4], 8));
 
-function coutingVowels(strs: string): number {
-  let counter = 0;
-  let vowels = "aieou";
+// function coutingVowels(strs: string): number {
+//   let counter = 0;
+//   let vowels = "aieou";
 
-  for (let i = 0; i < strs.length; i++) {
-    if (vowels.includes(strs[i].toLowerCase())) {
+//   for (let i = 0; i < strs.length; i++) {
+//     if (vowels.includes(strs[i].toLowerCase())) {
+//       counter++;
+//     }
+//   }
+
+//   return counter;
+// }
+
+// console.log(coutingVowels("Pedro"));
+
+// function largestOddNumber(nums: number[]): number | null {
+//   let largest: number | null = null;
+
+//   for (const num of nums) {
+//     if (num % 2 !== 0 && (largest === null || num > largest)) {
+//       largest = num;
+//     }
+//   }
+//   return largest;
+// }
+
+// console.log(largestOddNumber([2, 7, 4, 9, 6]));
+
+function countUpperCase(strs: string): number {
+  let counter = 0;
+
+  for (let str of strs) {
+    if (str === str.toUpperCase()) {
       counter++;
     }
   }
-
   return counter;
 }
 
-console.log(coutingVowels("Pedro"));
+console.log(countUpperCase("PeReiRA"));
