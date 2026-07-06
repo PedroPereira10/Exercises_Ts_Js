@@ -308,15 +308,27 @@
 
 // console.log(largestOddNumber([2, 7, 4, 9, 6]));
 
-function countUpperCase(strs: string): number {
-  let counter = 0;
+// function countUpperCase(strs: string): number {
+//   let counter = 0;
 
-  for (let str of strs) {
-    if (str === str.toUpperCase()) {
-      counter++;
-    }
+//   for (let str of strs) {
+//     if (str === str.toUpperCase()) {
+//       counter++;
+//     }
+//   }
+//   return counter;
+// }
+
+// console.log(countUpperCase("PeReiRA"));
+
+function characterFrequency(strs: string): Map<string, number> {
+  let counter = 0;
+  let seen = new Map<string, number>();
+
+  for (let char of strs) {
+    seen.set(char, (seen.get(char) || 0) + 1); // || quer dizer que se o valor a esquerda é falso, utilisar o da direita
   }
-  return counter;
+  return seen;
 }
 
-console.log(countUpperCase("PeReiRA"));
+console.log(characterFrequency("paralelepipedo"));
