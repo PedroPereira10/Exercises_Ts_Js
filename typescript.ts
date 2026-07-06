@@ -322,7 +322,6 @@
 // console.log(countUpperCase("PeReiRA"));
 
 function characterFrequency(strs: string): Map<string, number> {
-  let counter = 0;
   let seen = new Map<string, number>();
 
   for (let char of strs) {

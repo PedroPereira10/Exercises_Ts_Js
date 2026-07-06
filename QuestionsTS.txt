@@ -13,3 +13,4 @@
 13 - Couting Vowels
 14 - Largest Odd Number
 15 - Counting Upper Case
+16 - Couting Character Frequency
