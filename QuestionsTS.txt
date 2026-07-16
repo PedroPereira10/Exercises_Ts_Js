@@ -14,3 +14,9 @@
 14 - Largest Odd Number
 15 - Counting Upper Case
 16 - Couting Character Frequency
+17 - Debounce
+18 - hook UseToogle
+19 - Receive a name and age and print it
+20 - Interface
+21 - Sum Array
+

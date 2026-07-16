@@ -1,0 +1,3 @@
+Diference between for in and for of:
+
+for in is to cover an index and for of is to cover an element.

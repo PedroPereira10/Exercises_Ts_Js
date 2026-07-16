@@ -321,13 +321,66 @@
 
 // console.log(countUpperCase("PeReiRA"));
 
-function characterFrequency(strs: string): Map<string, number> {
-  let seen = new Map<string, number>();
+// function characterFrequency(strs: string): Map<string, number> {
+//   let seen = new Map<string, number>();
 
-  for (let char of strs) {
-    seen.set(char, (seen.get(char) || 0) + 1); // || quer dizer que se o valor a esquerda é falso, utilisar o da direita
+//   for (let char of strs) {
+//     seen.set(char, (seen.get(char) || 0) + 1); // || quer dizer que se o valor a esquerda é falso, utilisar o da direita
+//   }
+//   return seen;
+// }
+
+// console.log(characterFrequency("paralelepipedo"));
+
+// function debounce(fn: Function, delay: number) {
+//   let timer: ReturnType<typeof setTimeout>;
+
+//   return function () {
+//     clearTimeout(timer);
+
+//     timer = setTimeout(() => {
+//       fn();
+//     }, delay);
+//   };
+// }
+
+// const search = debounce(() => {
+//   console.log("Searching...");
+// }, 500);
+
+// search();
+// search();
+// search();
+
+// function TypeBase(str: string, num: number): string {
+//   return `Hello my name is ${str} and i'm ${num} years old`;
+// }
+
+// console.log(TypeBase("Pedro", 26));
+
+// interface User {
+//   id: number;
+//   name: string;
+//   email?: string;
+//   isAdmin: boolean;
+// }
+
+// const user: User = {
+//   id: 1,
+//   name: "Pedro",
+//   email: "a.pedropereira@hotmail.com",
+//   isAdmin: true,
+// };
+
+// console.log(user);
+
+function sumArray(nums: number[]): number {
+  let sum = 0;
+  for (let num of nums) {
+    sum += num;
   }
-  return seen;
+
+  return sum;
 }
 
-console.log(characterFrequency("paralelepipedo"));
+console.log(sumArray([10, 20, 30, 40, 50, 60]));
