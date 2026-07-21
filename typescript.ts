@@ -374,13 +374,40 @@
 
 // console.log(user);
 
-function sumArray(nums: number[]): number {
-  let sum = 0;
-  for (let num of nums) {
-    sum += num;
-  }
+// function sumArray(nums: number[]): number {
+//   let sum = 0;
+//   for (let num of nums) {
+//     sum += num;
+//   }
 
-  return sum;
+//   return sum;
+// }
+
+// console.log(sumArray([10, 20, 30, 40, 50, 60]));
+
+interface User {
+  id: number;
+  name: string;
+  age: number;
+  isAdmin: boolean;
 }
 
-console.log(sumArray([10, 20, 30, 40, 50, 60]));
+const users: User[] = [
+  { id: 1, name: "Pedro", age: 25, isAdmin: true },
+  { id: 2, name: "Christian", age: 26, isAdmin: false },
+  { id: 3, name: "Jenny", age: 25, isAdmin: false },
+];
+
+function getAdmin(users: User[]): User[] {
+  const admins: User[] = [];
+
+  for (let user of users) {
+    if (user.isAdmin === true) {
+      admins.push(user);
+    }
+  }
+
+  return admins;
+}
+
+console.log(getAdmin(users));
