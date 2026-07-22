@@ -385,29 +385,48 @@
 
 // console.log(sumArray([10, 20, 30, 40, 50, 60]));
 
-interface User {
+// interface User {
+//   id: number;
+//   name: string;
+//   age: number;
+//   isAdmin: boolean;
+// }
+
+// const users: User[] = [
+//   { id: 1, name: "Pedro", age: 25, isAdmin: true },
+//   { id: 2, name: "Christian", age: 26, isAdmin: false },
+//   { id: 3, name: "Jenny", age: 25, isAdmin: false },
+// ];
+
+// function getAdmin(users: User[]): User[] {
+//   const admins: User[] = [];
+
+//   for (let user of users) {
+//     if (user.isAdmin === true) {
+//       admins.push(user);
+//     }
+//   }
+
+//   return admins;
+// }
+
+// console.log(getAdmin(users));
+
+interface Product {
   id: number;
   name: string;
-  age: number;
-  isAdmin: boolean;
+  price: number;
 }
 
-const users: User[] = [
-  { id: 1, name: "Pedro", age: 25, isAdmin: true },
-  { id: 2, name: "Christian", age: 26, isAdmin: false },
-  { id: 3, name: "Jenny", age: 25, isAdmin: false },
+const products: Product[] = [
+  { id: 1, name: "Keyboard", price: 2 },
+  { id: 2, name: "Mouse", price: 5 },
+  { id: 3, name: "Screen", price: 6 },
+  { id: 4, name: "Laptop", price: 8 },
 ];
 
-function getAdmin(users: User[]): User[] {
-  const admins: User[] = [];
-
-  for (let user of users) {
-    if (user.isAdmin === true) {
-      admins.push(user);
-    }
-  }
-
-  return admins;
+function getProductById(products: Product[], id: number): Product | undefined {
+  return products.find((product) => product.id === id);
 }
 
-console.log(getAdmin(users));
+console.log(getProductById(products, 4));
