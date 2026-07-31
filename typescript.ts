@@ -425,8 +425,16 @@ const products: Product[] = [
   { id: 4, name: "Laptop", price: 8 },
 ];
 
-function getProductById(products: Product[], id: number): Product | undefined {
-  return products.find((product) => product.id === id);
+// Function that returns the product and its informations by id
+
+// function getProductById(products: Product[], id: number): Product | undefined {
+//   return products.find((product) => product.id === id);
+// }
+
+// Function that returns a new map with all the names of products
+
+function getProductInNewMap(products: Product[]): string[] | undefined {
+  return products.map((product) => product.name);
 }
 
-console.log(getProductById(products, 4));
+console.log(getProductInNewMap(products));
