@@ -22,3 +22,6 @@
 22 - Create interface (user with id, name, age and isAdmin ), add object and write a function that will return just the users that are admins.
 23 - Create interface (product with id, name and price), add an object and write a function that will return the product according to its id.
 24 - Create interface (product with id, name and price), add an object and write a function that will return a new map with the name of the products.
+25 - Create interface (product with id, name and price), add an object and write a function that will return a a list of products which the prices are lower than 50.
+
+

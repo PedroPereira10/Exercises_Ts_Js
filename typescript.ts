@@ -419,10 +419,10 @@ interface Product {
 }
 
 const products: Product[] = [
-  { id: 1, name: "Keyboard", price: 2 },
+  { id: 1, name: "Keyboard", price: 50 },
   { id: 2, name: "Mouse", price: 5 },
-  { id: 3, name: "Screen", price: 6 },
-  { id: 4, name: "Laptop", price: 8 },
+  { id: 3, name: "Screen", price: 10 },
+  { id: 4, name: "Laptop", price: 80 },
 ];
 
 // Function that returns the product and its informations by id
@@ -433,8 +433,16 @@ const products: Product[] = [
 
 // Function that returns a new map with all the names of products
 
-function getProductInNewMap(products: Product[]): string[] | undefined {
-  return products.map((product) => product.name);
+// function getProductInNewMap(products: Product[]): string[] | undefined {
+//   return products.map((product) => product.name);
+// }
+
+// console.log(getProductInNewMap(products));
+
+// Function that returns just the products that their price are low than 50.
+
+function getProductLowerThan50(products: Product[]): Product[] {
+  return products.filter((product) => product.price < 50);
 }
 
-console.log(getProductInNewMap(products));
+console.log(getProductLowerThan50(products));
