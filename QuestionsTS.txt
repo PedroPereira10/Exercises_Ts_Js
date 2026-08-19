@@ -23,5 +23,12 @@
 23 - Create interface (product with id, name and price), add an object and write a function that will return the product according to its id.
 24 - Create interface (product with id, name and price), add an object and write a function that will return a new map with the name of the products.
 25 - Create interface (product with id, name and price), add an object and write a function that will return a a list of products which the prices are lower than 50.
+26 - Print the list just with the numbers that are even. Filter
+27 - Print the list of numbers multiplied by 3. Map
+28 - Print  the sum of the list. Reduce
+29 - Use find to return the name Pedro.
+30 - Transforme le Id or String and "Id-(Id value);
+31 - Function that returns the last element.
+32 - Creation d'une API, appeler l'api.
 
 

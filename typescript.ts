@@ -412,18 +412,18 @@
 
 // console.log(getAdmin(users));
 
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-}
+// interface Product {
+//   id: number;
+//   name: string;
+//   price: number;
+// }
 
-const products: Product[] = [
-  { id: 1, name: "Keyboard", price: 50 },
-  { id: 2, name: "Mouse", price: 5 },
-  { id: 3, name: "Screen", price: 10 },
-  { id: 4, name: "Laptop", price: 80 },
-];
+// const products: Product[] = [
+//   { id: 1, name: "Keyboard", price: 50 },
+//   { id: 2, name: "Mouse", price: 5 },
+//   { id: 3, name: "Screen", price: 10 },
+//   { id: 4, name: "Laptop", price: 80 },
+// ];
 
 // Function that returns the product and its informations by id
 
@@ -441,8 +441,116 @@ const products: Product[] = [
 
 // Function that returns just the products that their price are low than 50.
 
-function getProductLowerThan50(products: Product[]): Product[] {
-  return products.filter((product) => product.price < 50);
-}
+// function getProductLowerThan50(products: Product[]): Product[] {
+//   return products.filter((product) => product.price < 50);
+// }
 
-console.log(getProductLowerThan50(products));
+// console.log(getProductLowerThan50(products));
+
+// const numbers = [2, 5, 6, 8, 11, 14, 17, 20];
+// const result = numbers.filter((number) => number % 2 === 0);
+// console.log(result);
+
+// const numbers = [2, 5, 8, 11];
+// const numbersMult = numbers.map((number) => number * 3);
+// console.log(numbersMult);
+
+// const prices = [10, 20, 30, 40];
+// const sum = prices.reduce((acc, curr) => acc + curr, 0);
+// console.log(sum);
+
+// const users = [
+//   { id: 1, name: "Pedro", age: 26 },
+//   { id: 2, name: "Jenny", age: 25 },
+//   { id: 3, name: "Maria", age: 30 },
+// ];
+
+// const findName = users.find((user) => user.name === "Pedro");
+// console.log(findName);
+
+// interface Product {
+//   id: number;
+//   name: string;
+//   price: number;
+// }
+
+// const products: Product[] = [
+//   { id: 1, name: "Keyboard", price: 50 },
+//   { id: 2, name: "Mouse", price: 5 },
+//   { id: 3, name: "Screen", price: 10 },
+//   { id: 4, name: "Laptop", price: 80 },
+// ];
+
+// function getExpensiveProducts(products: Product[]): Product[] {
+//   return products.filter((product) => product.price > 50);
+// }
+
+// console.log(getExpensiveProducts(products));
+
+// function formatId(id: number | string): string {
+//   return "ID-" + id;
+// }
+
+// console.log(formatId("ABC"));
+
+// function getLast<T>(items: T[]): T {
+//   return items[items.length - 1];
+// }
+
+// console.log(getLast([1, 2, 3]));
+
+// function printValue(value: unknown) {
+//   if (typeof value === "string") {
+//     console.log(value);
+//   } else if (typeof value === "number") {
+//     console.log(value);
+//   } else {
+//     console.log("The type doesn't match with the value");
+//   }
+// }
+
+// printValue("Pedro");
+
+// interface User {
+//   id: number;
+//   name: string;
+//   age: number;
+// }
+
+// const users = [
+//   { id: 1, name: "Pedro", age: 26 },
+//   { id: 2, name: "Jenny", age: 25 },
+//   { id: 3, name: "Maria", age: 30 },
+// ];
+
+// function fakeApiRequest(id: number): Promise<User> {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const user = users.find((user) => user.id === id);
+
+//       if (user) {
+//         resolve(user);
+//       } else {
+//         reject(new Error("User not found"));
+//       }
+//     }, 1000);
+//   });
+// }
+
+// async function getUser(id: number): Promise<User | null> {
+//   try {
+//     const user = await fakeApiRequest(id);
+//     return user;
+//   } catch (error) {
+//     console.error(error);
+//     return null;
+//   }
+// }
+
+// getUser(1)
+//   .then((user) => {
+//     console.log(user);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });
