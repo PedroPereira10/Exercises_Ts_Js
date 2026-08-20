@@ -30,5 +30,6 @@
 30 - Transforme le Id or String and "Id-(Id value);
 31 - Function that returns the last element.
 32 - Creation d'une API, appeler l'api.
+33 - Get id and name from the interface with unkown.
 
 
