@@ -554,3 +554,35 @@
 //   .catch((error) => {
 //     console.error(error);
 //   });
+
+interface User {
+  id: number;
+  name: string;
+  age: number;
+}
+
+const users = [
+  { id: 1, name: "Pedro", age: 26 },
+  { id: 2, name: "Jenny", age: 25 },
+  { id: 3, name: "Maria", age: 30 },
+];
+
+function getUserName(data: unknown): string {
+  if (typeof data === "object" && data !== null) {
+    if (
+      "id" in data &&
+      "name" in data &&
+      typeof data.id === "number" &&
+      typeof data.name === "string"
+    ) {
+      const user = users.find((user) => user.id === data.id);
+      if (user) {
+        return user.name;
+      }
+    }
+  }
+
+  return "Invalid user";
+}
+
+console.log(getUserName({ id: 2, name: "Jenny" }));
