@@ -555,34 +555,76 @@
 //     console.error(error);
 //   });
 
+// interface User {
+//   id: number;
+//   name: string;
+//   age: number;
+//   active: boolean;
+// }
+
+// function getUserName(data: unknown): string {
+//   if (typeof data === "object" && data !== null) {
+//     if (
+//       "id" in data &&
+//       "name" in data &&
+//       typeof data.id === "number" &&
+//       typeof data.name === "string"
+//     ) {
+//       const user = users.find((user) => user.id === data.id);
+//       if (user) {
+//         return user.name;
+//       }
+//     }
+//   }
+
+//   return "Invalid user";
+// }
+
+// console.log(getUserName({ id: 2, name: "Jenny" }));
+
 interface User {
   id: number;
   name: string;
   age: number;
 }
 
-const users = [
-  { id: 1, name: "Pedro", age: 26 },
-  { id: 2, name: "Jenny", age: 25 },
-  { id: 3, name: "Maria", age: 30 },
-];
+// const users = [
+//   { id: 1, name: "Pedro", age: 26, active: true },
+//   { id: 2, name: "Jenny", age: 25, active: false },
+//   { id: 3, name: "Maria", age: 30, active: true },
+// ];
 
-function getUserName(data: unknown): string {
-  if (typeof data === "object" && data !== null) {
-    if (
-      "id" in data &&
-      "name" in data &&
-      typeof data.id === "number" &&
-      typeof data.name === "string"
-    ) {
-      const user = users.find((user) => user.id === data.id);
-      if (user) {
-        return user.name;
-      }
-    }
-  }
+// const response: unknown = {
+//   success: true,
+//   data: [
+//     { id: 1, name: "Pedro", age: 26 },
+//     { id: "2", name: "Jenny", age: 25 },
+//   ],
+// };
 
-  return "Invalid user";
-}
+// function parseUsers(response: unknown): User[] {
+//   if (typeof response === "object" && response !== null) {
+//     if ("success" in response && response.success === true) {
+//       if ("data" in response && Array.isArray(response.data)) {
+//         const data = response.data;
+//         const validUsers = data.every((user) => {
+//           if (typeof user !== "object" || user === null) {
+//             return false;
+//           }
+//           return (
+//             typeof user.id === "number" &&
+//             typeof user.name === "string" &&
+//             typeof user.age === "number"
+//           );
+//         });
+//         if (validUsers) {
+//           return data;
+//         }
+//       }
+//     }
+//   }
+//   return [];
+// }
 
-console.log(getUserName({ id: 2, name: "Jenny" }));
+// // console.log(parseUsers({ id: 1, name: "Pedro" }));
+// console.log(parseUsers(response));
