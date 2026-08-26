@@ -582,11 +582,11 @@
 
 // console.log(getUserName({ id: 2, name: "Jenny" }));
 
-interface User {
-  id: number;
-  name: string;
-  age: number;
-}
+// interface User {
+//   id: number;
+//   name: string;
+//   age: number;
+// }
 
 // const users = [
 //   { id: 1, name: "Pedro", age: 26, active: true },
@@ -628,3 +628,87 @@ interface User {
 
 // // console.log(parseUsers({ id: 1, name: "Pedro" }));
 // console.log(parseUsers(response));
+
+// function processUser(name: string, callback: (name: string) => void): void {
+//   setTimeout(() => {
+//     callback(name);
+//   }, 1000);
+// }
+
+// processUser("Pedro", (name) => {
+//   console.log("Hello", name);
+// });
+
+// processUser("Jenny", (name) => {
+//   console.log("Hello", name);
+// });
+
+// function fetchUser(id: number, callback: (name: string) => void): void {
+//   setTimeout(() => {
+//     const users = [
+//       { id: 1, name: "Pedro" },
+//       { id: 2, name: "Jenny" },
+//     ];
+
+//     const user = users.find((user) => user.id === id);
+
+//     if (user) {
+//       callback(user.name);
+//     }
+//   }, 1000);
+// }
+
+// fetchUser(1, (name) => {
+//   console.log("User found", name);
+// });
+
+interface User {
+  id: number;
+  name: string;
+}
+
+const users = [
+  { id: 1, name: "Pedro" },
+  { id: 2, name: "Jenny" },
+];
+
+// async function fetchUserData(id: number): Promise<User | null> {
+//   const user = users.find((user) => user.id === id);
+
+//   if (!user) {
+//     // throw new Error("User not found");
+//     return null;
+//   }
+
+//   return user;
+// }
+
+// fetchUserData(99)
+//   .then((user) => {
+//     console.log(user);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });
+
+async function fetchUserData(id: number): Promise<User | null> {
+  const user = users.find((user) => user.id === id);
+
+  if (!user) {
+    return null;
+  }
+
+  return user;
+}
+
+async function main() {
+  const user = await fetchUserData(1);
+
+  if (user === null) {
+    console.log("User not found");
+  } else {
+    console.log("User found :", user);
+  }
+}
+
+main();

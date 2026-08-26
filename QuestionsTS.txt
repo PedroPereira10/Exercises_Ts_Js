@@ -31,5 +31,7 @@
 31 - Function that returns the last element.
 32 - Creation d'une API, appeler l'api.
 33 - Get id and name from the interface with unkown.
+34 - Call a name using callback.
+35 - With the same function from the exercise above, add a setTime out.
 
 
