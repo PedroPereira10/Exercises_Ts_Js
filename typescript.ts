@@ -662,15 +662,15 @@
 //   console.log("User found", name);
 // });
 
-interface User {
-  id: number;
-  name: string;
-}
+// interface User {
+//   id: number;
+//   name: string;
+// }
 
-const users = [
-  { id: 1, name: "Pedro" },
-  { id: 2, name: "Jenny" },
-];
+// const users = [
+//   { id: 1, name: "Pedro" },
+//   { id: 2, name: "Jenny" },
+// ];
 
 // async function fetchUserData(id: number): Promise<User | null> {
 //   const user = users.find((user) => user.id === id);
@@ -691,23 +691,94 @@ const users = [
 //     console.error(error);
 //   });
 
-async function fetchUserData(id: number): Promise<User | null> {
+// async function fetchUserData(id: number): Promise<User | null> {
+//   const user = users.find((user) => user.id === id);
+
+//   if (!user) {
+//     return null;
+//   }
+
+//   return user;
+// }
+
+// async function main() {
+//   const user = await fetchUserData(1);
+
+//   if (user === null) {
+//     console.log("User not found");
+//   } else {
+//     console.log("User found :", user);
+//   }
+// }
+
+// main();
+
+// -------------------------------------------------------------------------------------------------------------------------------------------
+
+// Fake Api avec throw Error, .then and .catch
+
+interface User {
+  id: number;
+  name: string;
+  age: number;
+}
+
+const users = [
+  { id: 1, name: "Pedro", age: 26 },
+  { id: 2, name: "Jenny", age: 20 },
+  { id: 3, name: "Christian", age: 25 },
+  { id: 4, name: "Alikhan", age: 22 },
+  { id: 5, name: "Michael", age: 30 },
+];
+
+// async function fakeApi(id: number): Promise<User> {
+//   const user = users.find((user) => user.id === id);
+
+//   if (!user) {
+//     throw new Error("User not found");
+//   }
+
+//   return user;
+// }
+
+// fakeApi(2)
+//   .then((user) => {
+//     console.log(user);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });
+
+// Fake Api qui Écris main() qui :
+// utilise await;
+// utilise try/catch;
+// cherche id = 2;
+// affiche Welcome Jenny si l'utilisateur existe;
+// affiche Failed to load user s'il y a une erreur.
+
+async function fakeApi(id: number): Promise<User> {
   const user = users.find((user) => user.id === id);
 
   if (!user) {
-    return null;
+    throw new Error("User not found");
   }
 
   return user;
 }
 
-async function main() {
-  const user = await fetchUserData(1);
+async function getAge(id: number): Promise<number> {
+  const user = await fakeApi(id);
+  return user.age;
+}
 
-  if (user === null) {
-    console.log("User not found");
-  } else {
-    console.log("User found :", user);
+async function main() {
+  try {
+    const user = await fakeApi(5);
+
+    console.log("Welcome", user.name);
+    console.log("Age", user.age);
+  } catch (error) {
+    console.log("Failed to load user");
   }
 }
 
