@@ -756,6 +756,34 @@ const users = [
 // affiche Welcome Jenny si l'utilisateur existe;
 // affiche Failed to load user s'il y a une erreur.
 
+// async function fakeApi(id: number): Promise<User> {
+//   const user = users.find((user) => user.id === id);
+
+//   if (!user) {
+//     throw new Error("User not found");
+//   }
+
+//   return user;
+// }
+
+// async function getAge(id: number): Promise<number> {
+//   const user = await fakeApi(id);
+//   return user.age;
+// }
+
+// async function main() {
+//   try {
+//     const user = await fakeApi(5);
+
+//     console.log("Welcome", user.name);
+//     console.log("Age", user.age);
+//   } catch (error) {
+//     console.log("Failed to load user");
+//   }
+// }
+
+// main();
+
 async function fakeApi(id: number): Promise<User> {
   const user = users.find((user) => user.id === id);
 
@@ -766,17 +794,16 @@ async function fakeApi(id: number): Promise<User> {
   return user;
 }
 
-async function getAge(id: number): Promise<number> {
+async function getName(id: number): Promise<string> {
   const user = await fakeApi(id);
-  return user.age;
+  return user.name;
 }
 
 async function main() {
   try {
-    const user = await fakeApi(5);
+    const name = await getName(5);
 
-    console.log("Welcome", user.name);
-    console.log("Age", user.age);
+    console.log("Welcome", name);
   } catch (error) {
     console.log("Failed to load user");
   }
