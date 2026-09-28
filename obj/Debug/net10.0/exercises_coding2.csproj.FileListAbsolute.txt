@@ -1,0 +1,15 @@
+/Users/pedropereira/exercises_coding2/obj/Debug/net10.0/exercises_coding2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pedropereira/exercises_coding2/obj/Debug/net10.0/exercises_coding2.AssemblyInfoInputs.cache
+/Users/pedropereira/exercises_coding2/obj/Debug/net10.0/exercises_coding2.AssemblyInfo.cs
+/Users/pedropereira/exercises_coding2/obj/Debug/net10.0/exercises_coding2.csproj.CoreCompileInputs.cache
+/Users/pedropereira/exercises_coding2/obj/Debug/net10.0/exercises_coding2.sourcelink.json
+/Users/pedropereira/exercises_coding2/bin/Debug/net10.0/exercises_coding2
+/Users/pedropereira/exercises_coding2/bin/Debug/net10.0/exercises_coding2.deps.json
+/Users/pedropereira/exercises_coding2/bin/Debug/net10.0/exercises_coding2.runtimeconfig.json
+/Users/pedropereira/exercises_coding2/bin/Debug/net10.0/exercises_coding2.dll
+/Users/pedropereira/exercises_coding2/bin/Debug/net10.0/exercises_coding2.pdb
+/Users/pedropereira/exercises_coding2/obj/Debug/net10.0/exercises_coding2.dll
+/Users/pedropereira/exercises_coding2/obj/Debug/net10.0/refint/exercises_coding2.dll
+/Users/pedropereira/exercises_coding2/obj/Debug/net10.0/exercises_coding2.pdb
+/Users/pedropereira/exercises_coding2/obj/Debug/net10.0/exercises_coding2.genruntimeconfig.cache
+/Users/pedropereira/exercises_coding2/obj/Debug/net10.0/ref/exercises_coding2.dll

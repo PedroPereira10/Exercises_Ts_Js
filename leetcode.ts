@@ -15,18 +15,18 @@
 //   return k;
 // }
 
-function reverse(x: number): number {
-  const INT_MIN = -(2 ** 31);
-  const INT_MAX = 2 ** 31 - 1;
+// function reverse(x: number): number {
+//   const INT_MIN = -(2 ** 31);
+//   const INT_MAX = 2 ** 31 - 1;
 
-  const reversedStr = Math.abs(x).toString().split("").reverse().join("");
-  const reversedNum = parseInt(reversedStr) * Math.sign(x);
+//   const reversedStr = Math.abs(x).toString().split("").reverse().join("");
+//   const reversedNum = parseInt(reversedStr) * Math.sign(x);
 
-  if (reversedNum < INT_MIN || reversedNum > INT_MAX) {
-    return 0;
-  }
+//   if (reversedNum < INT_MIN || reversedNum > INT_MAX) {
+//     return 0;
+//   }
 
-  return reversedNum;
-}
+//   return reversedNum;
+// }
 
-console.log(reverse(345));
+// console.log(reverse(345));
