@@ -1,7 +1,16 @@
 using System;
 
 class BankAccount {
-    private double Balance;
+    private double _balance;
+
+    public Guid Id { get; private set; } = Guid.NewGuid();
+    public string OwnerName { get; private set; }
+
+
+    public BankAccount(string ownerName)
+    {
+        OwnerName = ownerName;
+    }
 
     public void Deposit(double amount){
 
@@ -11,7 +20,7 @@ class BankAccount {
         }
         else
         {
-            Balance += amount;
+            _balance += amount;
         }
     }
 
@@ -23,21 +32,21 @@ class BankAccount {
             Console.WriteLine("The withdrawal amount must be greater than 0.");
         }
 
-        else if (amount > Balance)
+        else if (amount > _balance)
         {
             Console.WriteLine("Insufficient balance.");
         }
 
         else
         {
-            Balance-= amount;
+            _balance-= amount;
         }
 
     }
 
     public double GetBalance()
     {
-        return Balance;
+        return _balance;
     }
 }
 
@@ -45,12 +54,15 @@ class Program
 {
     static void Main()
     {
-        BankAccount account = new BankAccount();
+        BankAccount account = new BankAccount("Pedro");
+
+        Console.WriteLine("Id: "+ account.Id);
+        Console.WriteLine("Name: " + account.OwnerName);
 
         account.Deposit(100);
-        Console.WriteLine(account.GetBalance());
+        Console.WriteLine("Initial deposit: " + account.GetBalance());
 
         account.Withdraw(50);
-        Console.WriteLine(account.GetBalance());
+        Console.WriteLine("Real balance: " + account.GetBalance());
     }
 }
