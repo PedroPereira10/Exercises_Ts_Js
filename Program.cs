@@ -126,8 +126,7 @@ class Program
         BankAccount pedro = new BankAccount("Pedro","ACC-12345");
         BankAccount john = new BankAccount("John", "ACC-67890");
         
-        // Console.WriteLine("Id: "+ pedro.Id);
-        Console.WriteLine("Account number: " + pedro.AccountNumber);
+        Console.WriteLine("\nAccount number: " + pedro.AccountNumber);
         Console.WriteLine("Owner: "+ pedro.Owner);
     
         pedro.Deposit(100);
@@ -136,6 +135,12 @@ class Program
         pedro.Withdraw(50);
         pedro.Transfer(john, 40);
         Console.WriteLine("Real balance: " + pedro.GetBalance());
+
+        Console.WriteLine("\nAccount number: " + john.AccountNumber);
+        Console.WriteLine("Owner: " + john.Owner);
+        Console.WriteLine("Real balance: " + john.GetBalance());
+
+
         Console.WriteLine("\nTransactions:");
 
         foreach (Transaction transaction in pedro.Transactions)
