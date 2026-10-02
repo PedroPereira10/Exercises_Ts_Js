@@ -36,7 +36,7 @@ class BankAccount {
         }
 
         _balance += amount;
-        Transaction transaction = new Transaction(amount, "Deposit");
+        Transaction transaction = new Transaction(amount, TransactionType._deposit);
         _transactions.Add(transaction);
     }
 
@@ -54,10 +54,42 @@ class BankAccount {
         }
 
         _balance -= amount;
-        Transaction transaction = new Transaction(-amount, "Withdrawal");
+        Transaction transaction = new Transaction(-amount, TransactionType._withdraw);
         _transactions.Add(transaction);
         
 
+    }
+
+    public void Transfer(BankAccount destination, decimal amount)
+    {
+        if (destination == null)
+        {
+            throw new ArgumentNullException(nameof(destination));
+
+        }
+        if (destination == this)
+        {
+            throw new ArgumentException("Cannot transfer to the same account");
+        }
+        if ( amount <= 0)
+        {
+            throw new ArgumentException("Transfer must be greater than 0");
+
+        }
+        if ( amount > _balance)
+        {
+            throw new ArgumentException("Insufficient balance.");
+        }
+        _balance -= amount;
+        destination._balance += amount;
+
+        _transactions.Add(
+            new Transaction(-amount, TransactionType._transfer)
+        );
+
+        destination._transactions.Add(
+            new Transaction(amount, TransactionType._transfer)
+        );
     }
 
     public decimal GetBalance()
@@ -66,13 +98,20 @@ class BankAccount {
     }
 }
 
+    public enum TransactionType
+    {
+        _deposit,
+        _withdraw,
+        _transfer
+    }
+
 class Transaction
 {
     public decimal _amount{get;}
-    public string _type {get;}
+    public TransactionType _type {get;}
     public DateTime _date {get;}
 
-    public Transaction(decimal amount, string type)
+    public Transaction(decimal amount, TransactionType type)
     {
         _amount = amount;
         _type = type;
@@ -84,20 +123,22 @@ class Program
 {
     static void Main()
     {
-        BankAccount account = new BankAccount("Pedro","ACC-12345");
+        BankAccount pedro = new BankAccount("Pedro","ACC-12345");
+        BankAccount john = new BankAccount("John", "ACC-67890");
         
-        Console.WriteLine("Id: "+ account.Id);
-        Console.WriteLine("Owner: "+ account.Owner);
-        Console.WriteLine("Account number: " + account.AccountNumber);
+        // Console.WriteLine("Id: "+ pedro.Id);
+        Console.WriteLine("Account number: " + pedro.AccountNumber);
+        Console.WriteLine("Owner: "+ pedro.Owner);
+    
+        pedro.Deposit(100);
+        Console.WriteLine("Initial deposit: " + pedro.GetBalance());
 
-        account.Deposit(100);
-        Console.WriteLine("Initial deposit: " + account.GetBalance());
-
-        account.Withdraw(50);
-        Console.WriteLine("Real balance: " + account.GetBalance());
+        pedro.Withdraw(50);
+        pedro.Transfer(john, 40);
+        Console.WriteLine("Real balance: " + pedro.GetBalance());
         Console.WriteLine("\nTransactions:");
 
-        foreach (Transaction transaction in account.Transactions)
+        foreach (Transaction transaction in pedro.Transactions)
         {
             Console.WriteLine(
                 $"{transaction._date} - {transaction._type}: {transaction._amount}"
